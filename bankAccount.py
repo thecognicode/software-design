@@ -11,4 +11,18 @@ class BankAccount:
     def balance(self):
         return self.balance
     
+    @balance.setter
+    def balance(self, value):
+        if value < 0:
+            raise ValueError("Balance cannot be negative")
+        self.balance = value
+
+    def deposit(self, amount):
+        self.balance += amount
     
+    def withdraw(self, amount): 
+        if amount > self.balance:
+            raise ValueError ("Insufficient Balance")
+        self.balance -= amount
+
+
