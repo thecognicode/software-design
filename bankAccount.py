@@ -26,3 +26,10 @@ class BankAccount:
     def __str__(self):
         return f"Account No. : {self._accNo}\nName of Customer: {self.owner_name}\nBalance : {self.balance}"
 
+abiHDFC = BankAccount("hdfc1234", "Abishek", 102)
+# print("Balance : ", abiHDFC.balance)
+abiHDFC.deposit(1000)
+print(abiHDFC.balance)
+abiHDFC.withdraw(1102)
+print(abiHDFC)
+abiHDFC.withdraw(100)
