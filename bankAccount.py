@@ -4,25 +4,25 @@ class BankAccount:
 
         self._accNo = accNo
         self.owner_name = owner_name
-        self.balance = balance
+        if balance < 0:
+            raise ValueError("Balance cannot be negative")
+        self._balance = balance
 
     # Getter Balance Method
     @property
     def balance(self):
-        return self.balance
-    
-    @balance.setter
-    def balance(self, value):
-        if value < 0:
-            raise ValueError("Balance cannot be negative")
-        self.balance = value
+        return self._balance
 
     def deposit(self, amount):
-        self.balance += amount
+        if amount <= 0:
+            raise ValueError("Denominations cannot be 0 or negative")
+        self._balance += amount
     
     def withdraw(self, amount): 
         if amount > self.balance:
-            raise ValueError ("Insufficient Balance")
-        self.balance -= amount
-
+            raise ValueError ("Insufficient Balance. Current Balance: ", self.balance)
+        self._balance -= amount
+    
+    def __str__(self):
+        return f"Account No. : {self._accNo}\nName of Customer: {self.owner_name}\nBalance : {self.balance}"
 
