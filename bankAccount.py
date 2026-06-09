@@ -35,7 +35,18 @@ class SavingsAccount(BankAccount):
     def CalculateInterest(self):
         annual_interest = self.balance * self.interest_rate
         return annual_interest
+    
+class CurrentAccount(BankAccount):
 
+    def __init__(self, accNo, owner_name, balance, over_draft_limit):
+        super().__init__(accNo, owner_name, balance)
+        self.over_draft_limit = over_draft_limit
+    
+    def withdraw(self, amount):
+        if amount > self.balance and amount < self.over_draft_limit:
+            raise Exception
+        return super().withdraw(amount)
+    
 # abiHDFC = BankAccount("hdfc1234", "Abishek", 102)
 # # print("Balance : ", abiHDFC.balance)
 # abiHDFC.deposit(1000)
