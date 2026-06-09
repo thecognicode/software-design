@@ -55,5 +55,7 @@ class CurrentAccount(BankAccount):
 # print(abiHDFC)
 # abiHDFC.withdraw(100)
 
-
-
+abisavings = SavingsAccount("accabi1234", "Abishek", 1000, 0.65)
+print(abisavings.balance)
+print(abisavings.interest_rate)
+print(abisavings.CalculateInterest())
