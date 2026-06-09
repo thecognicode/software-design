@@ -33,6 +33,7 @@ class SavingsAccount(BankAccount):
         self.interest_rate = interest_rate
 
     def CalculateInterest(self):
+        self.interest_rate = self.interest_rate/100
         annual_interest = self.balance * self.interest_rate
         return annual_interest
     
@@ -43,7 +44,7 @@ class CurrentAccount(BankAccount):
         self.over_draft_limit = over_draft_limit
     
     def withdraw(self, amount):
-        if amount > self.over_draft_limit:
+        if amount > self.over_draft_limit + self.balance:
             raise Exception
         self._balance -= amount
         
@@ -57,13 +58,13 @@ class CurrentAccount(BankAccount):
 # print(abiHDFC)
 # abiHDFC.withdraw(100)
 
-abisavings = SavingsAccount("accabi1234", "Abishek", 1000, 0.65)
+abisavings = SavingsAccount("accabi1234", "Abishek", 1000, 6.5)
 print(abisavings.balance)
 print(abisavings.interest_rate)
 print(abisavings.CalculateInterest())
 
-abicurrent = CurrentAccount("accabi1234", "Abishek", 1000, 1500)
-print(abicurrent.over_draft_limit)
-print(abicurrent.balance)
-abicurrent.withdraw(1501)
-print(abicurrent.balance)
+# abicurrent = CurrentAccount("accabi1234", "Abishek", 1000, 1500)
+# print(abicurrent.over_draft_limit)
+# print(abicurrent.balance)
+# abicurrent.withdraw(2501)
+# print(abicurrent.balance)
