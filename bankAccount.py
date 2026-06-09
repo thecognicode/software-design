@@ -26,10 +26,23 @@ class BankAccount:
     def __str__(self):
         return f"Account No. : {self._accNo}\nName of Customer: {self.owner_name}\nBalance : {self.balance}"
 
-abiHDFC = BankAccount("hdfc1234", "Abishek", 102)
-# print("Balance : ", abiHDFC.balance)
-abiHDFC.deposit(1000)
-print(abiHDFC.balance)
-abiHDFC.withdraw(1102)
-print(abiHDFC)
-abiHDFC.withdraw(100)
+class SavingsAccount(BankAccount):
+
+    def __init__(self, accNo, owner_name, balance, interest_rate):
+        super().__init__(accNo, owner_name, balance)
+        self.interest_rate = interest_rate
+
+    def CalculateInterest(self):
+        annual_interest = self.balance * self.interest_rate
+        return annual_interest
+
+# abiHDFC = BankAccount("hdfc1234", "Abishek", 102)
+# # print("Balance : ", abiHDFC.balance)
+# abiHDFC.deposit(1000)
+# print(abiHDFC.balance)
+# abiHDFC.withdraw(1102)
+# print(abiHDFC)
+# abiHDFC.withdraw(100)
+
+
+
