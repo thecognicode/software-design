@@ -43,7 +43,7 @@ class CurrentAccount(BankAccount):
         self.over_draft_limit = over_draft_limit
     
     def withdraw(self, amount):
-        if amount > self.balance and amount < self.over_draft_limit:
+        if amount > self.over_draft_limit:
             raise Exception
         return super().withdraw(amount)
     
@@ -59,3 +59,8 @@ abisavings = SavingsAccount("accabi1234", "Abishek", 1000, 0.65)
 print(abisavings.balance)
 print(abisavings.interest_rate)
 print(abisavings.CalculateInterest())
+
+abicurrent = CurrentAccount("accabi1234", "Abishek", 1000, 1500)
+print(abicurrent.over_draft_limit)
+print(abicurrent.balance)
+abicurrent.withdraw(1400)
