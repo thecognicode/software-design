@@ -49,15 +49,6 @@ class CurrentAccount(BankAccount):
         self._balance -= amount
         
 
-    
-# abiHDFC = BankAccount("hdfc1234", "Abishek", 102)
-# # print("Balance : ", abiHDFC.balance)
-# abiHDFC.deposit(1000)
-# print(abiHDFC.balance)
-# abiHDFC.withdraw(1102)
-# print(abiHDFC)
-# abiHDFC.withdraw(100)
-
 abisavings = SavingsAccount("accabi1234", "Abishek", 1000, 6.5)
 print(abisavings.balance)
 print(abisavings.interest_rate)
