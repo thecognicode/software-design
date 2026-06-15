@@ -12,3 +12,9 @@ class SMS:
 
     def send(self, message):
         print(f"Message :{message}\nsent via SMS")
+
+class PushNotification:
+
+    def send(self, message):
+        print(f"Message :{message}\nsent via Push Notifications")
+
