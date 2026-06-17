@@ -18,11 +18,6 @@ class PushNotification:
     def send(self, message):
         print(f"Message :{message}\nsent via Push Notifications")
 
-class WhatsApp:
-
-    def send(self, message):
-        print(f"Message : {message}\nsent via WhatsApp")
-
 notifications = [Email(), SMS(), PushNotification()]
 
 for notification in notifications:
