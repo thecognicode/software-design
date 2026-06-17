@@ -23,3 +23,6 @@ class WhatsApp:
     def send(self, message):
         print(f"Message : {message}\nsent via WhatsApp")
 
+
+wa_message = WhatsApp()
+print(wa_message.send("Hello Abishek!"))
