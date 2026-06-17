@@ -23,6 +23,7 @@ class WhatsApp:
     def send(self, message):
         print(f"Message : {message}\nsent via WhatsApp")
 
+notifications = [Email(), SMS(), PushNotification()]
 
-wa_message = WhatsApp()
-print(wa_message.send("Hello Abishek!"))
+for notification in notifications:
+    notification.send("This is notification design")
