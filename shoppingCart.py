@@ -12,3 +12,8 @@ class NoDiscount(Discount):
     def apply(self, total):
         return total
 
+class FlatDiscount(Discount):
+
+    def apply(self, total):
+        return total
+
