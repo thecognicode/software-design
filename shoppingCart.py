@@ -21,5 +21,14 @@ class PercentageDiscount(Discount):
 
     def apply(self, total):
         return total * 0.9
-        
+
+
+class Cart:
+
+    def __init__(self, total, discount):
+        self.total = total
+        self.discount = discount
+
+    def checkout(self):
+        return self.discount.apply(self.total)
 
