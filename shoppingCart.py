@@ -15,5 +15,11 @@ class NoDiscount(Discount):
 class FlatDiscount(Discount):
 
     def apply(self, total):
-        return total
+        return total - 500
+
+class PercentageDiscount(Discount):
+
+    def apply(self, total):
+        return total * 0.9
+        
 
