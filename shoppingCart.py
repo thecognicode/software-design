@@ -5,3 +5,10 @@ class Discount(ABC):
     @abstractmethod
     def apply(self, total):
         pass
+
+
+class NoDiscount(Discount):
+
+    def apply(self, total):
+        return total
+
