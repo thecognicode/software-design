@@ -37,3 +37,9 @@ print(cart.checkout())
 
 cart2 = Cart(800, FlatDiscount())
 print(cart2.checkout())
+
+cart3 = Cart(1099, NoDiscount())
+print(cart3.checkout())
+
+cart4 = Cart(9999, PercentageDiscount())
+print(cart4.checkout())
