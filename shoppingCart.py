@@ -34,3 +34,6 @@ class Cart:
 
 cart = Cart(5000, PercentageDiscount())
 print(cart.checkout())
+
+cart2 = Cart(800, FlatDiscount())
+print(cart2.checkout())
