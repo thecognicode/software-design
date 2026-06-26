@@ -32,3 +32,5 @@ class Cart:
     def checkout(self):
         return self.discount.apply(self.total)
 
+cart = Cart(5000, PercentageDiscount())
+print(cart.checkout())
