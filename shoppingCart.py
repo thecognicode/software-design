@@ -46,3 +46,6 @@ print(cart4.checkout())
 
 cart5 = Cart(676, FlatDiscount())
 print(cart5.checkout())
+
+cart6 = Cart(899, NoDiscount())
+print(cart6.checkout())
